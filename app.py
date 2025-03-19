@@ -3,7 +3,6 @@ import os
 import logging
 import traceback
 from pathlib import Path
-import os
 import subprocess
 
 # Install FAISS dynamically if it's not installed
