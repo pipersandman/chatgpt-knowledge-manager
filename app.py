@@ -6,12 +6,12 @@ from pathlib import Path
 import os
 import subprocess
 
-# Attempt to install FAISS only if not already installed
+# Install FAISS dynamically if it's not installed
 try:
     import faiss
 except ImportError:
-    subprocess.run(["pip", "install", "faiss-cpu"], check=True)
-    import faiss  # Now try importing again
+    subprocess.run(["pip", "install", "--no-cache-dir", "faiss-cpu"], check=True)
+    import faiss  # Import again after installation
 
 
 # Configure logging
