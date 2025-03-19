@@ -6,6 +6,15 @@ from pathlib import Path
 import subprocess
 import sys
 
+print("Python Path:", sys.path)
+print("Python Executable:", sys.executable)
+
+try:
+    import faiss
+    print("FAISS successfully imported!")
+except ImportError as e:
+    print("FAISS import failed:", e)
+
 # Install FAISS dynamically if it's not installed
 try:
     import faiss
