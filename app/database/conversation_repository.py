@@ -13,7 +13,7 @@ class ConversationRepository:
     """Data access layer for conversations"""
     
     def __init__(self):
-        self.db = db.connect()
+        self.db = db_instance.connect()
         self.collection = self.db.conversations
     
     def create(self, conversation: Conversation) -> str:

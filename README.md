@@ -56,7 +56,7 @@ AI Knowledge Manager is an intelligent system for extracting, organizing, and re
    OPENAI_API_KEY=your-openai-api-key-here
    
    # Database
-   MONGODB_URI=mongodb://localhost:27017
+   MONGODB_URI=+srv://tfoster:JywSUqQG826_3@knowledgemanagerdb.gho68.mongodb.net/?retryWrites=true&w=majority&appName=KnowledgeManagerDB
    MONGODB_DB_NAME=knowledge_manager
    
    # Application

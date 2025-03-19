@@ -6,8 +6,13 @@ load_dotenv()
 
 # API Keys & External Services
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
-MONGODB_DB_NAME = os.getenv("MONGODB_DB_NAME", "knowledge_manager")
+
+load_dotenv()
+
+MONGODB_URI = os.getenv("MONGODB_URI")  # No default localhost fallback
+MONGODB_DB_NAME = os.getenv("MONGODB_DB_NAME")
+
+print(f"Using MongoDB URI: {MONGODB_URI}")  # Debugging
 
 # Application settings
 APP_NAME = "AI Knowledge Manager"

@@ -13,7 +13,7 @@ class UserRepository:
     """Data access layer for user management"""
     
     def __init__(self):
-        self.db = db.connect()
+        self.db = db_instance.connect()
         self.collection = self.db.users
     
     def create(self, user: User) -> Optional[str]:

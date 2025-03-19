@@ -12,7 +12,7 @@ class EmbeddingRepository:
     """Data access layer for conversation embeddings"""
     
     def __init__(self):
-        self.db = db.connect()
+        self.db = db_instance.connect()
         self.collection = self.db.embeddings
     
     def create(self, embedding: ConversationEmbedding) -> str:
