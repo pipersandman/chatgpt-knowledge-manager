@@ -4,6 +4,7 @@ import logging
 import traceback
 from pathlib import Path
 import subprocess
+import sys
 
 # Install FAISS dynamically if it's not installed
 try:
@@ -11,6 +12,16 @@ try:
 except ImportError:
     subprocess.run(["pip", "install", "--no-cache-dir", "faiss-cpu"], check=True)
     import faiss  # Import again after installation
+
+# Ensure FAISS is installed in the current Python environment
+try:
+    import faiss
+except ImportError:
+    print("FAISS not found, installing...")
+    subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir", "faiss-cpu"], check=True)
+    print("FAISS installed successfully.")
+    import faiss  # Import again after installation
+
 
 
 # Configure logging
