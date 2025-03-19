@@ -3,6 +3,16 @@ import os
 import logging
 import traceback
 from pathlib import Path
+import os
+import subprocess
+
+# Attempt to install FAISS only if not already installed
+try:
+    import faiss
+except ImportError:
+    subprocess.run(["pip", "install", "faiss-cpu"], check=True)
+    import faiss  # Now try importing again
+
 
 # Configure logging
 logging.basicConfig(
